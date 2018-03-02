@@ -48,7 +48,7 @@ bool controlNMEA (unsigned char *line,Tst_NMEA_field *st_nmea_field, Tst_conf_co
 		} break;
 
 #ifdef DEBUG
-	printf(INDENT_SPACES" RMC frames available \n");
+		printf(INDENT_SPACES" RMC frames available \n");
 #endif
 
 		case MINMEA_SENTENCE_GGA: {
@@ -76,18 +76,18 @@ bool controlNMEA (unsigned char *line,Tst_NMEA_field *st_nmea_field, Tst_conf_co
 					st_nmea_field -> fix_quality = frame.fix_quality;
 					st_nmea_field -> satellites_tracked = frame.satellites_tracked;
 				}
-					testTime = st_nmea_field ->Time.elapsedTime_sec;
+				testTime = st_nmea_field ->Time.elapsedTime_sec;
 			}
 			else {
-					printf(INDENT_SPACES "$xxGGA sentence is not parsed\n");
-				}
+				printf(INDENT_SPACES "$xxGGA sentence is not parsed\n");
+			}
 
 		} break;
 
 #ifdef DEBUG
-	printf(INDENT_SPACES" GGA frames available \n");
-	printf("%d:%d:%d:%d\n", st_nmea_field -> Time.hours, st_nmea_field -> Time.minutes,
-		st_nmea_field -> Time.seconds, (st_nmea_field -> Time.mseconds ) );
+		printf(INDENT_SPACES" GGA frames available \n");
+		printf("%d:%d:%d:%d\n", st_nmea_field -> Time.hours, st_nmea_field -> Time.minutes,
+			st_nmea_field -> Time.seconds, (st_nmea_field -> Time.mseconds ) );
 #endif
 
 		case MINMEA_SENTENCE_VTG: {
@@ -100,7 +100,7 @@ bool controlNMEA (unsigned char *line,Tst_NMEA_field *st_nmea_field, Tst_conf_co
 
 			else {
 				printf(INDENT_SPACES "$xxVTG sentence is not parsed\n");
-				}
+			}
 		} break;
 
 		case MINMEA_INVALID: {
@@ -108,7 +108,7 @@ bool controlNMEA (unsigned char *line,Tst_NMEA_field *st_nmea_field, Tst_conf_co
 		} break;
 
 #ifdef DEBUG
-	printf(INDENT_SPACES" VTG frames available \n");
+		printf(INDENT_SPACES" VTG frames available \n");
 #endif
 
 		default: {
@@ -117,7 +117,7 @@ bool controlNMEA (unsigned char *line,Tst_NMEA_field *st_nmea_field, Tst_conf_co
 
 
 	}
-return true;
+	return true;
 
 }
 

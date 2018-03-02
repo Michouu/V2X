@@ -18,7 +18,7 @@ all: $(SOURCE)
 	@echo "Compilation : +++ All good. "
 	$(CC) $(SOURCE)  -o $(EXEC) $(CFLAGS) -lpthread
 
-	@file $(EXEC)
+	file $(EXEC)
 
 clean:
 	@echo "+++ Running Clang Static Analyzer..."
